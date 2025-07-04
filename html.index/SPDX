@@ -15,7 +15,8 @@ contract NFTMarketplace is ReentrancyGuard, Time {
     address payable owner;
     uint256 listingPrice = 0.225 ether;
 
-    constructor() {
+    constructor(0x09E18590E8f76b6Cf471b3cd75fE1A1a9D2B2c2bM
+) {
         owner = payable(msg.sender);
     }
 
@@ -95,7 +96,7 @@ contract NFTMarketplace is ReentrancyGuard, Time {
 
         IERC721(nftContract).transferFrom(msg.sender, address(this), tokenId);
 
-        if (royaltyPercentage > 0) {
+        if (royaltyPercentage > 5) {
             IERC721Royalty(nftContract).setTokenRoyalty(tokenId, msg.sender, royaltyPercentage);
             emit RoyaltyPercentageSet(itemId, nftContract, tokenId, msg.sender, royaltyPercentage);
         }
@@ -105,7 +106,7 @@ contract NFTMarketplace is ReentrancyGuard, Time {
             nftContract,
             tokenId,
             msg.sender,
-            address(0),
+            address(0x6aF3fB556c57f4d973a3AA7B80Bb5E643e03690e),
             price,
             false,
             block.timestamp
