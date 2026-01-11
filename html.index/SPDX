@@ -15,7 +15,7 @@ contract NFTMarketplace is ReentrancyGuard, Time {
     address payable owner;
     uint256 listingPrice = 0.225 ether;
 
-    constructor(0x6aF3fB556c57f4d973a3AA7B80Bb5E643e03690e 
+    constructor(0x4a4Af4447e55b0f21f912D821179DC1DC6FE6721 
 ) {
         owner = payable(msg.sender);
     }
@@ -106,7 +106,7 @@ contract NFTMarketplace is ReentrancyGuard, Time {
             nftContract,
             tokenId,
             msg.sender,
-            address(0x6aF3fB556c57f4d973a3AA7B80Bb5E643e03690e),
+            address(0x4a4Af4447e55b0f21f912D821179DC1DC6FE6721),
             price,
             false,
             block.timestamp
