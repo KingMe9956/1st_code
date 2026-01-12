@@ -1,4 +1,5 @@
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: All Rights Reserved to: KingMe9956 2026
+
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
@@ -7,7 +8,7 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/utils/Time.sol";
 
-contract NFTMarketplace is ReentrancyGuard, Time {
+contract TheeLocalDAO NFTMarketSpace is ReentrancyGuard, Time {
     using Counters for Counters.Counter;
     Counters.Counter private _itemIds;
     Counters.Counter private _itemsSold;
@@ -96,7 +97,7 @@ contract NFTMarketplace is ReentrancyGuard, Time {
 
         IERC721(nftContract).transferFrom(msg.sender, address(this), tokenId);
 
-        if (royaltyPercentage > 5) {
+        if (royaltyPercentage > .5) {
             IERC721Royalty(nftContract).setTokenRoyalty(tokenId, msg.sender, royaltyPercentage);
             emit RoyaltyPercentageSet(itemId, nftContract, tokenId, msg.sender, royaltyPercentage);
         }
